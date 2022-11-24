@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct jellybean {
+    char colour;
+    int counter;
+};
+
+// Return the total number of red (r) and green (g) jelly beans
+int struct_count(int size, struct jellybean array[size]) {
+    // TODO: Complete this function.
+    
+    int i = 0;
+    int total = 0; 
+    while (i < size) {
+        if (array[i].colour == 'r' || array[i].colour == 'g') {
+            total += array[i].counter;
+        }
+    }
+    
+    return total; 
+}
+
+// This is a simple main function which could be used
+// to test your struct_count function.
+// It will not be marked.
+// Only your struct_count function will be marked.
+
+#define TEST_ARRAY_SIZE 5
+
+int main(void) {
+    struct jellybean test_array[TEST_ARRAY_SIZE] = {
+        { .colour = 'r', .counter = 20},
+        { .colour = 'g', .counter = 23},
+        { .colour = 'w', .counter = 51},
+        { .colour = 'r', .counter = 51},
+        { .colour = 'b', .counter = 51}
+    };
+    printf("%d\n", struct_count(TEST_ARRAY_SIZE, test_array));
+
+    return 0;
+}
