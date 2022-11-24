@@ -1,0 +1,54 @@
+// Y.A 31/03/2022
+// z5417171
+// This program will read characters from its input and writes the same  
+// characters to its output, except it does not write lower case vowels.
+
+#include <stdio.h>
+
+#define MAX 100
+
+char check_vowel(char letter);
+void eliminate_vowels(char * p);
+
+int main(void) {
+
+    char str[MAX] = {
+        0
+    };
+
+    fgets(str, MAX, stdin);
+
+    eliminate_vowels(str);
+    fputs(str, stdout);
+
+    return 0;
+}
+
+char check_vowel(char letter) {
+    if (letter == 'A' || letter == 'a' ||
+        letter == 'E' || letter == 'e' ||
+        letter == 'I' || letter == 'i' ||
+        letter == 'O' || letter == 'o' ||
+        letter == 'U' || letter == 'u') {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+void eliminate_vowels(char * p) {
+    int i = 0;
+    int j = 0;
+    while (p[i] != '\0') {
+        if (check_vowel(p[i]) == 0) {
+
+            j = i;
+            while (p[j] != '\0') {
+                p[j] = p[j + 1];
+                j++;
+            }
+        } else {
+            i++;
+        }
+    }
+}

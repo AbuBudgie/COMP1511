@@ -1,0 +1,36 @@
+//reverse_array.c 
+// Yahya.A
+// 11/03/2022
+// This program will read in integers line by line and when it reaches the end 
+// of input, prints those integers in reverse order line by line. 
+
+
+#include <stdio.h>
+
+#define MAX 100
+
+int main (void) {
+
+    int integers[MAX] = {0};
+    printf("Enter numbers forwards: "); 
+    printf("\n");
+    int size = 0; 
+    while (scanf("%d", &integers[size]) == 1) {
+        size++;
+    }
+    
+    int last = size;
+    int first = integers[size];
+    printf("Reversed: \n");
+    while (first <= last) {
+       size--;
+       first++; 
+       printf("%d ", integers[size]);
+       printf("\n"); 
+        if (size <= 0) {
+        return 0;
+        }
+    }
+
+    return 0; 
+}

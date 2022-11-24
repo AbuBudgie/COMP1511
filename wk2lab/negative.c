@@ -1,0 +1,24 @@
+//This program will determine whether the user entered
+// a negative number or a positive number.
+// created by Yahya Al-Faraj z5417171 24/02/2022
+
+#include <stdio.h>
+
+int main (void) {
+
+    int number;
+    
+    scanf("%d", &number);
+    
+        if (number <0) {
+        printf("Don't be so negative!\n");
+        }
+            if (number >0) {
+            printf("You have entered a positive number.\n");
+            }
+                if (number ==0) {
+                printf("You have entered zero.\n");
+                }
+
+    return 0;
+}

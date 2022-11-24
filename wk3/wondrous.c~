@@ -1,0 +1,39 @@
+// wondrous program using collatz conjecture
+// Y.A MARCH 2022
+
+#include <stdio.h>
+
+#define COLLATZ 1
+
+int main (void) {
+    int number;
+    
+    printf("What number would you like to see: ");
+    scanf("%d", &number);
+    
+    while (number > COLLATZ) {
+    counter = 0;
+        if (number % 2 == 0) {
+            number = number / 2;  
+            int counter = 0;     
+            while (counter < number) {
+                printf("*");
+                counter++;
+                
+            }
+            printf("\n");
+        } else {
+            int counter = 0;
+            number = number * 3 + 1;
+            while (counter < number) {
+                printf("*");
+                counter++;
+                }
+            printf("\n");
+        } 
+        
+
+    }
+   
+    return 0;
+}
